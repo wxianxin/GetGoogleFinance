@@ -17,7 +17,7 @@ For interval, the unit is second, and the smallest interval that Google will acc
 
 3. Call function `GetGoogleData.read_google_data(file_name)`  
     This will read from a text format file and covert it into a pandas DataFrame.  
-    Please note this will also change the `DATA` column into `int32 UNIX timstamp` in the DataFrame.
+    Please note this will also change the `DATE` column into `int32 UNIX timstamp` in the DataFrame.
 
 
 ### What other functions do you think is needed?
