@@ -14,6 +14,9 @@ For interval, the unit is second, and the smallest interval that Google will acc
 	This will create a webpage link and grab its data, then store the data in a text format file.
 2. Call function `read_google_data(file_name)`
 	This will read from a text format file and covert it into a pandas DataFrame.
+	Please note this will also change the `DATA` column into `int32 UNIX timstamp` in the DataFrame.
 
+
+## What other function do you think is needed?
 
 
