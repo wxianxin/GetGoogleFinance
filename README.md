@@ -47,12 +47,19 @@ For interval, the unit is second, and the smallest interval that Google will acc
     This will read from a text format file and covert it into a pandas DataFrame.  
     Please note this will also change the `DATE` column into `int32 UNIX timstamp` in the DataFrame.
 
+**One can also achieve the step 2&3 at the same time by calling:**  
+`GetGoogleData.fetch_read_google_data(file_name, ticker, days, interval)`
+
 #### Sample in
 ```
 file_name = "my_data.txt"
 ticker = "AMD"
 days = 10
 interval = 60
+```
+or
+```
+GetGoogleData.fetch_read_google_data(file_name, ticker, days, interval)
 ```
 
 #### Sample out
@@ -70,7 +77,6 @@ interval = 60
 3908  1.486156e+09  12.225  12.23  12.22  12.225   230239
 3909  1.486156e+09  12.235  12.24  12.22  12.225  1654800
 ```
-
 
 #### The function `fetch_google_data`is slow, PLEASE enlighten me for improvement!
 #### What other functions do you think are needed?

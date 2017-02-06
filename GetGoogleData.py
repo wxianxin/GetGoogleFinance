@@ -4,7 +4,7 @@ from urllib.request import urlopen
 import json
 
 abbreviations = {
-    "id":   "Internal Google Security ID",
+    "id":   "Google Internal Security ID",
     't':    "Ticker",
     'e':    "Exchange",
     'l':    "Last Price",
@@ -74,5 +74,7 @@ def read_google_data(file_name):
             i = i + 1
     return my_data
 
-
-
+def fetch_read_google_data(file_name, ticker, days, interval):
+    fetch_google_data(file_name, ticker, days, interval)
+    my_data = read_google_data(file_name)
+    return my_data
