@@ -5,38 +5,72 @@ A simple script that helps you get Google Finance data more easily.
 ## Obtain real-time quote from Google
 This script provides real-time trading data with "negligible delay"(generally speaking).  
 
-You need to specify 1 argument: **ticker**.  
-**ticker** is a list of stock ticker(s).  
+**ticker** is 'string'.  
 
-(a). `import GetGoogleData`
+1. `import GetGoogleData`
 
-(a). Call function `GetGoogleData.real_time_quote(ticker)`  
+2. Call function `GetGoogleData.real_time_quote(ticker)`  
     This will return a list of dictionary(ies).
 
-
-
+#### Sample in
+```
+ticker = "AMD"
+GetGoogleData.real_time_quote(ticker)
+```
+#### Sample out
+```
+[{'Absolute Change': '-0.05',
+  'Exchange': 'NASDAQ',
+  'Internal Google Security ID': '327',
+  'Last Price': '12.23',
+  'Last Trade Date': 'Feb 3, 4:00PM EST',
+  'Last Trade Date/Time': '2017-02-03T16:00:02Z',
+  'Last Trade Time': '4:00PM EST',
+  'Percentage Change': '-0.37',
+  'Ticker': 'AMD'}]
+```
 
 
 ## Get historical data from Google
 
 You need to specify 4 arguments: **file name, ticker, days, interval**  
-eg.:
+**file name, ticker** are 'string'; **days, interval** are 'int'.
+
+For interval, the unit is second, and the smallest interval that Google will accept is 60 seconds.
+
+1. `import GetGoogleData`
+
+2. Call function `GetGoogleData.fetch_google_data(file_name, ticker, days, interval)`  
+    This will create a webpage link and grab its data, then store the data in a text format file.
+
+3. Call function `GetGoogleData.read_google_data(file_name)`  
+    This will read from a text format file and covert it into a pandas DataFrame.  
+    Please note this will also change the `DATE` column into `int32 UNIX timstamp` in the DataFrame.
+
+#### Sample in
 ```
 file_name = "my_data.txt"
-ticker = "IBM"
+ticker = "AMD"
 days = 10
 interval = 60
 ```
-For interval, the unit is second, and the smallest interval that Google will accept is 60 seconds.
 
-(a). `import GetGoogleData`
+#### Sample out
+```
+           DATE   CLOSE    HIGH     LOW    OPEN  VOLUME
+0  1.485182e+09  9.6924  9.6924    9.68    9.68  260266
+1  1.485182e+09    9.71    9.74    9.68    9.69   89222
+2  1.485182e+09   9.765    9.77  9.7099  9.7199  105005
+3  1.485182e+09    9.77    9.82    9.75  9.7699  233767
+4  1.485182e+09    9.79    9.84    9.77    9.77  112415
+......
+3905  1.486155e+09   12.23  12.23  12.21  12.215   268370
+3906  1.486155e+09   12.23  12.23  12.22  12.225   130856
+3907  1.486155e+09   12.23  12.23  12.22   12.23   245933
+3908  1.486156e+09  12.225  12.23  12.22  12.225   230239
+3909  1.486156e+09  12.235  12.24  12.22  12.225  1654800
+```
 
-(a). Call function `GetGoogleData.fetch_google_data(file_name, ticker, days, interval)`  
-    This will create a webpage link and grab its data, then store the data in a text format file.
-
-(a). Call function `GetGoogleData.read_google_data(file_name)`  
-    This will read from a text format file and covert it into a pandas DataFrame.  
-    Please note this will also change the `DATE` column into `int32 UNIX timstamp` in the DataFrame.
 
 #### The function `fetch_google_data`is slow, PLEASE enlighten me for improvement!
 #### What other functions do you think are needed?
