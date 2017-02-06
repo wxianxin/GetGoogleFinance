@@ -74,6 +74,7 @@ def read_google_data(file_name):
             i = i + 1
     return my_data
 
+
 def fetch_read_google_data(file_name, ticker, days, interval):
     fetch_google_data(file_name, ticker, days, interval)
     my_data = read_google_data(file_name)
