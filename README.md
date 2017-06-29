@@ -1,3 +1,5 @@
+Update: It seems for now, this Google API only offers historical data up to 50 trading days. (The API has been deprecated, but still somewhat functional)
+
 # GetGoogleData
 A simple script that helps you get Google Finance data more easily.
 Place the script in desirable path(Usually the folder of codes).
