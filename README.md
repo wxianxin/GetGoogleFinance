@@ -1,6 +1,6 @@
 # GetGoogleData
 A simple script that helps you get Google Finance data more easily.
-
+Place the script in desirable path(Usually the folder of codes).
 
 ## Obtain real-time quote from Google
 This script provides real-time trading data with "negligible delay"(generally speaking).  
@@ -33,7 +33,7 @@ GetGoogleData.real_time_quote(ticker)
 
 ## Get historical data from Google
 
-You need to specify 4 arguments: **file name, ticker, days, interval**  
+4 arguments are required: **file name, ticker, days, interval**  
 **file name, ticker** are 'string'; **days, interval** are 'int'.
 
 For interval, the unit is second, and the smallest interval that Google will accept is 60 seconds.

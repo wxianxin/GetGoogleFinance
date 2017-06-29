@@ -1,4 +1,7 @@
-# 20170127 StevenWang
+#!/usr/bin/env python
+__author__ = "Steven Wang"
+# 20170127
+
 import pandas as pd
 from urllib.request import urlopen
 import json
